@@ -1,0 +1,74 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+#slider{
+    overflow: hidden;
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+#slider figure img{
+    text-align: center;
+    float: left;
+    width: 20%;
+}
+
+@keyframes slider {
+ 0%{
+     left:0;
+ }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+}
+.booking{
+  font-family: Monospaced;
+  color: dodgerblue;
+}
+
+.card{
+  margin-top:25px ;
+}
+
+.img-responsive{
+  max-height: 10rem;
+}
+
+.card-text{
+  font: 16px "Fira Code";
+  color: peru;
+}
+.offer{
+    text-align: center;
+    text-decoration-color: black;
+    font-weight:bold;
+}
+
+.page-footer{
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom:-10px ;
+}

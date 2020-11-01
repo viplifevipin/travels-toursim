@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60a1c9ae-30e5-4a77-9ec4-0c694abf1652" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/updateapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/dbConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/places/destinations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/places/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/error.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/home/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/footer.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/places.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users/profile.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users/signin.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users/signup.hbs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jB0VrooXSFRk0T3dD1XVogmpRR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/views/partials" />
+      <recent name="$PROJECT_DIR$/views/desto" />
+      <recent name="$PROJECT_DIR$/views/layouts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.www">
+    <configuration name="dbConfig.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/database/dbConfig.js" working-dir="$PROJECT_DIR$/database">
+      <method v="2" />
+    </configuration>
+    <configuration name="destinations.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/destinations.js" working-dir="$PROJECT_DIR$/places">
+      <method v="2" />
+    </configuration>
+    <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/home.js" working-dir="$PROJECT_DIR$/places">
+      <method v="2" />
+    </configuration>
+    <configuration name="places.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/places.js" working-dir="$PROJECT_DIR$/places">
+      <method v="2" />
+    </configuration>
+    <configuration name="www" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bin/www" working-dir="$PROJECT_DIR$/bin">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.www" />
+        <item itemvalue="Node.js.destinations.js" />
+        <item itemvalue="Node.js.home.js" />
+        <item itemvalue="Node.js.dbConfig.js" />
+        <item itemvalue="Node.js.places.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60a1c9ae-30e5-4a77-9ec4-0c694abf1652" name="Default Changelist" comment="" />
+      <created>1603262207911</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603262207911</updated>
+      <workItem from="1603262210420" duration="6458000" />
+      <workItem from="1603364684095" duration="7760000" />
+      <workItem from="1603441930770" duration="19905000" />
+      <workItem from="1603558662280" duration="12221000" />
+      <workItem from="1603724868949" duration="1539000" />
+      <workItem from="1603729841122" duration="599000" />
+      <workItem from="1603788872019" duration="5652000" />
+      <workItem from="1603898303510" duration="370000" />
+      <workItem from="1604040445728" duration="12583000" />
+      <workItem from="1604121735373" duration="3820000" />
+      <workItem from="1604153914577" duration="3730000" />
+      <workItem from="1604198987888" duration="3715000" />
+      <workItem from="1604212041019" duration="4714000" />
+      <workItem from="1604231567610" duration="2147000" />
+    </task>
+    <task id="LOCAL-00001" summary="front end completed">
+      <created>1604233334060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604233334060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="front end completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="front end completed" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="177" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603262233634">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state x="177" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/61.24.1305.744@61.24.1305.744" timestamp="1603262233634" />
+    <state x="257" y="24" key="CommitChangelistDialog2" timestamp="1604233333876">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state x="257" y="24" key="CommitChangelistDialog2/61.24.1305.744@61.24.1305.744" timestamp="1604233333876" />
+    <state width="1282" height="159" key="GridCell.Tab.0.bottom" timestamp="1604229934565">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="159" key="GridCell.Tab.0.bottom/61.24.1305.744@61.24.1305.744" timestamp="1604229934565" />
+    <state width="1282" height="159" key="GridCell.Tab.0.center" timestamp="1604229934563">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="159" key="GridCell.Tab.0.center/61.24.1305.744@61.24.1305.744" timestamp="1604229934563" />
+    <state width="1282" height="159" key="GridCell.Tab.0.left" timestamp="1604229934562">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="159" key="GridCell.Tab.0.left/61.24.1305.744@61.24.1305.744" timestamp="1604229934562" />
+    <state width="1282" height="159" key="GridCell.Tab.0.right" timestamp="1604229934564">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="159" key="GridCell.Tab.0.right/61.24.1305.744@61.24.1305.744" timestamp="1604229934564" />
+    <state x="313" y="119" key="Vcs.Push.Dialog.v2" timestamp="1604233400325">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state x="313" y="119" key="Vcs.Push.Dialog.v2/61.24.1305.744@61.24.1305.744" timestamp="1604233400325" />
+    <state x="376" y="168" key="run.anything.popup" timestamp="1604209299521">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state x="376" y="168" key="run.anything.popup/61.24.1305.744@61.24.1305.744" timestamp="1604209299521" />
+    <state x="376" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1604120808529">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state x="376" y="89" width="672" height="678" key="search.everywhere.popup/61.24.1305.744@61.24.1305.744" timestamp="1604120808529" />
+  </component>
+</project>
