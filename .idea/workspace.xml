@@ -5,34 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a1c9ae-30e5-4a77-9ec4-0c694abf1652" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/updateapi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/dbConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/places/destinations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/places/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/error.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/home/index.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partials/footer.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partials/places.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/users/profile.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/users/signin.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/users/signup.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/signin.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/signin.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users/signup.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/signup.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +68,7 @@
     <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/home.js" working-dir="$PROJECT_DIR$/places">
       <method v="2" />
     </configuration>
-    <configuration name="places.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/places.js" working-dir="$PROJECT_DIR$/places">
+    <configuration name="user.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/models/user.js" working-dir="$PROJECT_DIR$/models">
       <method v="2" />
     </configuration>
     <configuration name="www" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bin/www" working-dir="$PROJECT_DIR$/bin">
@@ -97,10 +77,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.www" />
+        <item itemvalue="Node.js.user.js" />
         <item itemvalue="Node.js.destinations.js" />
         <item itemvalue="Node.js.home.js" />
         <item itemvalue="Node.js.dbConfig.js" />
-        <item itemvalue="Node.js.places.js" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +105,12 @@
       <workItem from="1604153914577" duration="3730000" />
       <workItem from="1604198987888" duration="3715000" />
       <workItem from="1604212041019" duration="4714000" />
-      <workItem from="1604231567610" duration="2147000" />
+      <workItem from="1604231567610" duration="7668000" />
+      <workItem from="1604758762044" duration="1081000" />
+      <workItem from="1604903865071" duration="7555000" />
+      <workItem from="1604919888861" duration="1247000" />
+      <workItem from="1604929436294" duration="3698000" />
+      <workItem from="1605272204425" duration="12794000" />
     </task>
     <task id="LOCAL-00001" summary="front end completed">
       <created>1604233334060</created>
@@ -154,30 +139,78 @@
       <screen x="61" y="24" width="1305" height="744" />
     </state>
     <state x="257" y="24" key="CommitChangelistDialog2/61.24.1305.744@61.24.1305.744" timestamp="1604233333876" />
-    <state width="1282" height="159" key="GridCell.Tab.0.bottom" timestamp="1604229934565">
+    <state width="1282" height="296" key="GridCell.Tab.0.bottom" timestamp="1605328491656">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
-    <state width="1282" height="159" key="GridCell.Tab.0.bottom/61.24.1305.744@61.24.1305.744" timestamp="1604229934565" />
-    <state width="1282" height="159" key="GridCell.Tab.0.center" timestamp="1604229934563">
+    <state width="1282" height="296" key="GridCell.Tab.0.bottom/61.24.1305.744@61.24.1305.744" timestamp="1605328491656" />
+    <state width="1282" height="296" key="GridCell.Tab.0.center" timestamp="1605328491655">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
-    <state width="1282" height="159" key="GridCell.Tab.0.center/61.24.1305.744@61.24.1305.744" timestamp="1604229934563" />
-    <state width="1282" height="159" key="GridCell.Tab.0.left" timestamp="1604229934562">
+    <state width="1282" height="296" key="GridCell.Tab.0.center/61.24.1305.744@61.24.1305.744" timestamp="1605328491655" />
+    <state width="1282" height="296" key="GridCell.Tab.0.left" timestamp="1605328491655">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
-    <state width="1282" height="159" key="GridCell.Tab.0.left/61.24.1305.744@61.24.1305.744" timestamp="1604229934562" />
-    <state width="1282" height="159" key="GridCell.Tab.0.right" timestamp="1604229934564">
+    <state width="1282" height="296" key="GridCell.Tab.0.left/61.24.1305.744@61.24.1305.744" timestamp="1605328491655" />
+    <state width="1282" height="296" key="GridCell.Tab.0.right" timestamp="1605328491656">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
-    <state width="1282" height="159" key="GridCell.Tab.0.right/61.24.1305.744@61.24.1305.744" timestamp="1604229934564" />
+    <state width="1282" height="296" key="GridCell.Tab.0.right/61.24.1305.744@61.24.1305.744" timestamp="1605328491656" />
+    <state width="1282" height="22" key="GridCell.Tab.1.bottom" timestamp="1604241220714">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.1.bottom/61.24.1305.744@61.24.1305.744" timestamp="1604241220714" />
+    <state width="1282" height="22" key="GridCell.Tab.1.center" timestamp="1604241220714">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.1.center/61.24.1305.744@61.24.1305.744" timestamp="1604241220714" />
+    <state width="1282" height="22" key="GridCell.Tab.1.left" timestamp="1604241220714">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.1.left/61.24.1305.744@61.24.1305.744" timestamp="1604241220714" />
+    <state width="1282" height="22" key="GridCell.Tab.1.right" timestamp="1604241220714">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.1.right/61.24.1305.744@61.24.1305.744" timestamp="1604241220714" />
+    <state width="1282" height="22" key="GridCell.Tab.2.bottom" timestamp="1604241220716">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.2.bottom/61.24.1305.744@61.24.1305.744" timestamp="1604241220716" />
+    <state width="1282" height="22" key="GridCell.Tab.2.center" timestamp="1604241220715">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.2.center/61.24.1305.744@61.24.1305.744" timestamp="1604241220715" />
+    <state width="1282" height="22" key="GridCell.Tab.2.left" timestamp="1604241220715">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.2.left/61.24.1305.744@61.24.1305.744" timestamp="1604241220715" />
+    <state width="1282" height="22" key="GridCell.Tab.2.right" timestamp="1604241220715">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.2.right/61.24.1305.744@61.24.1305.744" timestamp="1604241220715" />
+    <state width="1282" height="22" key="GridCell.Tab.3.bottom" timestamp="1604241220717">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.3.bottom/61.24.1305.744@61.24.1305.744" timestamp="1604241220717" />
+    <state width="1282" height="22" key="GridCell.Tab.3.center" timestamp="1604241220716">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.3.center/61.24.1305.744@61.24.1305.744" timestamp="1604241220716" />
+    <state width="1282" height="22" key="GridCell.Tab.3.left" timestamp="1604241220716">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.3.left/61.24.1305.744@61.24.1305.744" timestamp="1604241220716" />
+    <state width="1282" height="22" key="GridCell.Tab.3.right" timestamp="1604241220717">
+      <screen x="61" y="24" width="1305" height="744" />
+    </state>
+    <state width="1282" height="22" key="GridCell.Tab.3.right/61.24.1305.744@61.24.1305.744" timestamp="1604241220717" />
     <state x="313" y="119" key="Vcs.Push.Dialog.v2" timestamp="1604233400325">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
     <state x="313" y="119" key="Vcs.Push.Dialog.v2/61.24.1305.744@61.24.1305.744" timestamp="1604233400325" />
-    <state x="376" y="168" key="run.anything.popup" timestamp="1604209299521">
+    <state x="376" y="168" key="run.anything.popup" timestamp="1605328356499">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
-    <state x="376" y="168" key="run.anything.popup/61.24.1305.744@61.24.1305.744" timestamp="1604209299521" />
+    <state x="376" y="168" key="run.anything.popup/61.24.1305.744@61.24.1305.744" timestamp="1605328356499" />
     <state x="376" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1604120808529">
       <screen x="61" y="24" width="1305" height="744" />
     </state>
