@@ -12,6 +12,7 @@ var flash=require('connect-flash')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -30,18 +31,34 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({secret:'minesecret',resave:false,saveUninitialized:false}))
 app.use(flash())
+app.use(session({
+  secret: 'somesecret',
+  resave: false,
+  saveUninitialized: false
+}))
+// using the custom middleware for storing variable in response
+app.use((req, res, next) => {
+  res.locals.login = req.isAuthenticated();
+  next()
+})
 app.use(passport.initialize())
 app.use(passport.session())
 require('./config/passport')
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req,res,next) {
+  res.locals.login=req.isAuthenticated();
+  next();
+})
+
+
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+ app.use(function(req, res, next) {
   next(createError(404));
 });
 

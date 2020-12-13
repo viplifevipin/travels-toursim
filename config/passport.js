@@ -1,4 +1,7 @@
 const passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var FacebookStrategy=require('passport-facebook').Strategy;
+const keys=require('./keys');
 const LocalStrategy= require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const express = require('express');
@@ -9,7 +12,8 @@ const dbconfig = require('../database/dbConfig');
 
 
 passport.serializeUser(function(user, done){
-    done(null, user);
+    console.log('serializeUser: ' + user)
+    done(null, user,user.google);
 });
 
 passport.deserializeUser(function (user, done) {
@@ -35,11 +39,9 @@ passport.use('local-signUp',new LocalStrategy({
         return done(null,false,req.flash('error',messages))
     }
 
-
-    dbconfig.get().collection('user').findOne({'email': email}, function (err, user) {
+    dbconfig.get().collection('users').findOne({'email': email}, function (err, user) {
 
         console.log(email);
-
         if (err) {
             console.log('err case');
             return done(err);
@@ -54,7 +56,7 @@ passport.use('local-signUp',new LocalStrategy({
 
         bcrypt.genSalt(10,(err,salt)=>{
             bcrypt.hash(password,salt,(err,hash)=>{
-                dbconfig.get().collection('user').insertOne({
+                dbconfig.get().collection('users').insertOne({
                     email: email,
                     password: hash
                 }, function (err, data) {
@@ -90,7 +92,7 @@ passport.use('local.signIn',new LocalStrategy({
         })
         return done(null,false,req.flash('error',messages))
     }
-    dbconfig.get().collection('user').findOne({'email': email}, function (err, user) {
+    dbconfig.get().collection('users').findOne({'email': email}, function (err, user) {
 
         console.log(email);
 
@@ -103,7 +105,6 @@ passport.use('local.signIn',new LocalStrategy({
             console.log('Email is invalid.');
             return done(null, false, {message: 'Email is invalid.'});
         }
-
 bcrypt.compare(password,user.password,(err,isMatch)=>{
     if (isMatch){
         return done(null,user)
@@ -113,5 +114,37 @@ bcrypt.compare(password,user.password,(err,isMatch)=>{
     }
 })
 
+
     })
 }))
+
+passport.use(new GoogleStrategy({
+    clientID: keys.google.clientID,
+    clientSecret: keys.google.clientSecret,
+    callbackURL: "http://localhost:3000/auth/google/redirect"
+}, function(accessToken, refreshToken, profile, done) {
+
+    process.nextTick(function () {
+        dbconfig.get().collection('users').findOne({ 'google': profile.id }, function (err, user) {
+            if (err) {
+                return done(err)
+            }
+            if (user)
+            {
+                return done(null, user);
+            }
+            dbconfig.get().collection('users').insertOne({
+                google:profile.id,
+                token:accessToken,
+                name:profile.displayName
+            }, function (err, data) {
+                if (err) {
+                    return done(err);
+                }
+                return done(null,data)
+            })
+            console.log(profile);
+        })
+    });
+}));
+
