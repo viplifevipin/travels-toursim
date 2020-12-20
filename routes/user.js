@@ -44,26 +44,42 @@ router.get('/logout', (req,res)=>{
 router.post('/signup',[check('email','Invalid email').isEmail(),check('password','Invalid password.').isLength({min:5})],
     passport.authenticate('local-signUp',
     {
-    successRedirect:'/user/profile',
     failureRedirect:'/user/signup',
     failureFlash:true
-    }
-    ))
-
+    }),function(req,res,next){
+        if(req.session.oldUrl){
+            var oldUrl = req.session.oldUrl;
+            req.session.oldUrl = null;
+            res.redirect(oldUrl);
+        }
+        else {
+            res.redirect('/user/profile')
+        }
+    })
 router.post('/signin',[check('email','Invalid email').isEmail(),check('password','Invalid password.').isLength({min:5})],passport.authenticate('local.signIn',
     {
         successRedirect:'/user/profile',
         failureRedirect:'/user/signin',
         failureFlash:true
     }
-))
+),function(req,res,next){
+    if(req.session.oldUrl){
+        var oldUrl = req.session.oldUrl;
+        req.session.oldUrl = null;
+        res.redirect(oldUrl);
+    }
+    else {
+        res.redirect('/user/profile')
+    }
+})
 
 
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
-    res.redirect('/');
+    req.session.oldUrl=req.url
+    res.redirect('/user/signin')
 }
 
 

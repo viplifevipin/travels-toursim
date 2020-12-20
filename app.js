@@ -10,10 +10,13 @@ var session=require('express-session')
 var passport=require('passport')
 var flash=require('connect-flash')
 
+require('dotenv').config()
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
-
+var enquiryRouter=require('./routes/enquiry')
 var app = express();
 
 
@@ -48,15 +51,23 @@ require('./config/passport')
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function (req,res,next) {
+
   res.locals.login=req.isAuthenticated();
+  res.locals.session=req.session;
   next();
+
 })
+
+// app.use(function (req,res,next) {
+//   res.locals.login=req.isAuthenticated();
+//   next();
+// })
 
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/admin', adminRouter);
-
+app.use('/enquiry',enquiryRouter)
 // catch 404 and forward to error handler
  app.use(function(req, res, next) {
   next(createError(404));

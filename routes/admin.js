@@ -1,11 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var bcrypt = require('bcrypt-nodejs');
-var passport=require('passport')
-var  {check,validationResult}=require('express-validator')
-var mongodb=require('mongodb');
 let ObjectID = require('mongodb').ObjectID;
-var mongoose=require('mongoose')
 const upload=require('../cloudinary/multer')
 const cloudinary=require('cloudinary')
 
@@ -25,11 +20,11 @@ router.get('/admin', authRole(), (req, res) => {
     })
 })
 
-router.get('/register',function (req,res){
+router.get('/register',authRole,function (req,res){
     res.render('admin/register')
 })
 
-router.post('/register',upload.single('image'),async (req,res,done)=> {
+router.post('/register',authRole,upload.single('image'),async (req,res,done)=> {
 
     const result = await cloudinary.v2.uploader.upload(req.file.path)
     dbConfig.connect(function (error) {
@@ -51,7 +46,7 @@ router.post('/register',upload.single('image'),async (req,res,done)=> {
     })
 })
 
-router.get('/delete/:id',async (req,res)=>{
+router.get('/delete/:id',authRole,async (req,res)=>{
     var abcId=req.params.id;
     let idString=abcId
     let objId = new ObjectID(idString);
@@ -63,7 +58,7 @@ router.get('/delete/:id',async (req,res)=>{
     })
 })
 
-router.get('/edit/:id',async (req,res)=>{
+router.get('/edit/:id',authRole,async (req,res)=>{
     var abcId=req.params.id;
     let idString=abcId
     let objId = new ObjectID(idString);
@@ -77,7 +72,7 @@ router.get('/edit/:id',async (req,res)=>{
 
 })
 
-router.post('/update/:id',async (req,res,callback)=>{
+router.post('/update/:id',authRole,async (req,res,callback)=>{
     var abcId=req.params.id;
     let idString=abcId
     let objId = new ObjectID(idString);
