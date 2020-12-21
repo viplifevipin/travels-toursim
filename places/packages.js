@@ -4,19 +4,8 @@ dbConfig.connect(function (error) {
         console.log('unable to connect')
     } else {
         console.log('connected successfully')
-        dbConfig.get().collection('abc').insertMany([{
-            imagePath: "https://wallpapercave.com/wp/wp1922510.jpg",
-            place: 'Bulgaria',
-            price: '1500',
-            description1: 'the largest national economy in Europe',
-            description2: '11 nights and 12 days'
-        }, {
-            imagePath: "https://wallpapershome.com/images/pages/pic_h/4633.jpg",
-            place: 'Germany',
-            price: '1500',
-            description1: 'the largest national economy in Europe',
-            description2: '11 nights and 12 days'
-        }, {
+        dbConfig.get().collection('abc').insertMany([
+            {
             imagePath: "https://www.expatica.com/app/uploads/sites/9/2017/07/cost-of-living-in-switzerland.jpg",
             place: 'Switzerland',
             price: '1500',

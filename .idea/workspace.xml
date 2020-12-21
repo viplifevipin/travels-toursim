@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a1c9ae-30e5-4a77-9ec4-0c694abf1652" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/env/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/enquiry.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places/packages.js" beforeDir="false" afterPath="$PROJECT_DIR$/places/packages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/enquiry/enquiry.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/enquiry/enquiry.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/home/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home/index.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/packages/packages.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/packages/packages.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users/signin.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/signin.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/users/signup.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users/signup.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +68,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.www">
-    <configuration name="destinations.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/destinations.js" working-dir="$PROJECT_DIR$/places">
+    <configuration name="admin.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/routes/admin.js" working-dir="$PROJECT_DIR$/routes">
       <method v="2" />
     </configuration>
     <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/places/home.js" working-dir="$PROJECT_DIR$/places">
@@ -97,19 +90,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.destinations.js" />
       <item itemvalue="Node.js.home.js" />
       <item itemvalue="Node.js.packages.js" />
       <item itemvalue="Node.js.www" />
       <item itemvalue="Node.js.mailer.js" />
+      <item itemvalue="Node.js.admin.js" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.www" />
+        <item itemvalue="Node.js.admin.js" />
+        <item itemvalue="Node.js.packages.js" />
         <item itemvalue="Node.js.mailer.js" />
         <item itemvalue="Node.js.packages.js" />
-        <item itemvalue="Node.js.packages.js" />
-        <item itemvalue="Node.js.destinations.js" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +154,9 @@
       <workItem from="1608041276191" duration="6039000" />
       <workItem from="1608305826278" duration="2625000" />
       <workItem from="1608345655298" duration="6560000" />
-      <workItem from="1608447295467" duration="3519000" />
+      <workItem from="1608447295467" duration="4338000" />
+      <workItem from="1608457948102" duration="2440000" />
+      <workItem from="1608539775168" duration="4195000" />
     </task>
     <task id="LOCAL-00001" summary="front end completed">
       <created>1604233334060</created>

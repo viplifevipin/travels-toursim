@@ -60,17 +60,37 @@ router.get('/auth/google/redirect',
 //     });
 
 router.get('/packages',(req,res)=>{
-     dbConfig.get().collection('abc').find({}).toArray(function (err,docs){
-         if (err){
-             throw err
-         }
-         else {
-             res.render('packages/packages',{doc:docs})
-         }
-     })
+    if(req.query.search){
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        dbConfig.get().collection('abc').find({place:regex}).toArray(function (err,docs){
+            if (err){
+                throw err
+            }
+            else {
+                res.render('packages/packages',{doc:docs})
+            }
+        })
+    }
+    else {
+        dbConfig.get().collection('abc').find({}).toArray(function (err,docs){
+            if (err){
+                throw err
+            }
+            else {
+                res.render('packages/packages',{doc:docs})
+            }
+        })
+    }
+
+
 })
 
 
+
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 
 function isLoggedIn(req,res,next){
