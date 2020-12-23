@@ -11,7 +11,19 @@
             </li>
             <li class="nav-item">
 
-        <a class="nav-link" href="/packages">Packages</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-ticket" aria-hidden="true"></i>
+                    packages category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item" href="/packages">Honey moon trip</a>
+                        <!-- <a class="dropdown-item" href="/auth/facebook">facebook login</a> -->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/single">single trip</a>
+                </div>
+            </li>
 
             </li>
             <li class="nav-item dropdown">
@@ -38,7 +50,7 @@
 
     {{#if login}}
         <li class="nav-item">
-            <a class="nav-link"   href="/admin/admin" tabindex="-1" aria-disabled="true"><i class="fas fa-user-shield"></i>Admin</a>
+            <a class="nav-link"   href="/admin/category" tabindex="-1" aria-disabled="true"><i class="fas fa-user-shield"></i>Admin</a>
         </li>
         {{/if}}
 

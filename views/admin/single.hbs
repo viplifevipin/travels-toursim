@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h2> packages </h2>
+
+    <a href="/admin/singleadd" class="btn btn-primary">add new package</a>
+
+    <div class="row">
+
+
+        {{#each docs}}
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card">
+                    <img src="{{this.imagePath}}" class="img-responsive" alt="..." style="padding-bottom: 25px;padding-top: 0px;">
+                    <div class="card-block">
+                        <h5 class="card-title">{{this.place}}</h5>
+                        <h5 class="card-text">seats:-{{this.persons}}</h5>
+                        <p class="card-text">{{this.description1}}.<br>
+                            {{this.description2}}<br>
+                            ${{this.price}}/-
+                        </p>
+
+                        <div class="clearfix">
+                            <a href="/admin/singleedit/{{this._id}}" class="btn btn-primary">Edit</a>
+                            <a href="/admin/singledelete/{{this._id}}" class="enquiry pull-left"><i class="fas fa-envelope">Delete</i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        {{/each}}
+    </div>
+
+</div>
+
+</div>

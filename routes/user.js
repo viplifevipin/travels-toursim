@@ -8,8 +8,16 @@ var  {check,validationResult}=require('express-validator')
 
 
 router.get('/profile',isLoggedIn,function (req,res){
+    dbConfig.get().collection('order').find({user:req.user}).toArray(function(err,orders){
+        if (err){
+            return res.write('error')
+        }
+        //res.send(orders)
 
-    res.render('users/profile')
+        res.render('users/profile',{orders:orders});
+
+        console.log(orders)
+    });
 })
 
 router.get('/logout',isLoggedIn,function (req,res,next) {

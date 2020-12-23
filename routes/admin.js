@@ -8,7 +8,23 @@ require('../cloudinary/cloudinary-confiq')
 
 var dbConfig=require('../database/dbConfig')
 
-router.get('/admin', authRole(), (req, res) => {
+router.get('/category',authRole(),(req,res)=>{
+    res.render('admin/category')
+})
+
+router.get('/single',authRole(),(req,res)=>{
+    dbConfig.get().collection('single').find({}).toArray(function (err,docs){
+        if (err){
+            throw err
+        }
+        else {
+            res.render('admin/single',{docs})
+            console.log(docs)
+        }
+    })
+})
+
+router.get('/admin',authRole(), (req, res) => {
     dbConfig.get().collection('abc').find({}).toArray(function (err,docs){
         if (err){
             throw err
@@ -20,11 +36,15 @@ router.get('/admin', authRole(), (req, res) => {
     })
 })
 
-router.get('/register',authRole,function (req,res){
+router.get('/register',function (req,res){
     res.render('admin/register')
 })
 
-router.post('/register',authRole,upload.single('image'),async (req,res,done)=> {
+router.get('/singleadd',function (req,res){
+    res.render('admin/singlereg')
+})
+
+router.post('/register',upload.single('image'),async (req,res,done)=> {
 
     const result = await cloudinary.v2.uploader.upload(req.file.path)
     dbConfig.connect(function (error) {
@@ -46,7 +66,30 @@ router.post('/register',authRole,upload.single('image'),async (req,res,done)=> {
     })
 })
 
-router.get('/delete/:id',authRole,async (req,res)=>{
+router.post('/singleadd',upload.single('image'),async (req,res,done)=> {
+
+    const result = await cloudinary.v2.uploader.upload(req.file.path)
+    dbConfig.connect(function (error) {
+        if (error) {
+            console.log("db unable to connect");
+            process.exit(1);
+
+        } else {
+            console.log("connect Successfully....");
+            dbConfig.get().collection('single').insertMany([{
+                imagePath: result.secure_url,
+                place: req.body.name,
+                price:req.body.price,
+                description1:req.body.description1,
+                description2:req.body.description2,
+                persons:req.body.persons
+            }])
+            res.redirect('/admin/single')
+        }
+    })
+})
+
+router.get('/delete/:id',async (req,res)=>{
     var abcId=req.params.id;
     let idString=abcId
     let objId = new ObjectID(idString);
@@ -58,7 +101,19 @@ router.get('/delete/:id',authRole,async (req,res)=>{
     })
 })
 
-router.get('/edit/:id',authRole,async (req,res)=>{
+router.get('/singledelete/:id',async (req,res)=>{
+    var abcId=req.params.id;
+    let idString=abcId
+    let objId = new ObjectID(idString);
+    await dbConfig.get().collection('single').findOneAndDelete({_id:objId},function (err,abc){
+        if (err){
+            return err
+        }
+        res.redirect('/admin/single')
+    })
+})
+
+router.get('/edit/:id',async (req,res)=>{
     var abcId=req.params.id;
     let idString=abcId
     let objId = new ObjectID(idString);
@@ -72,7 +127,20 @@ router.get('/edit/:id',authRole,async (req,res)=>{
 
 })
 
-router.post('/update/:id',authRole,async (req,res,callback)=>{
+router.get('/singleedit/:id',async (req,res)=>{
+    var abcId=req.params.id;
+    let idString=abcId
+    let objId = new ObjectID(idString);
+
+    await dbConfig.get().collection('single').find({_id:objId}).toArray(function (err,doc){
+        if (err){
+            return res.write('error')
+        }
+        res.render('admin/updatesingle',{abc:doc})
+    })
+})
+
+router.post('/update/:id', (req,res,callback)=>{
     var abcId=req.params.id;
     let idString=abcId
     let objId = new ObjectID(idString);
@@ -82,9 +150,26 @@ router.post('/update/:id',authRole,async (req,res,callback)=>{
         description1:req.body.description1,
         description2:req.body.description2
     }
-    await dbConfig.get().collection('abc').findOneAndUpdate({_id:objId},{$set:data},{returnOrginal:false},function (err,result){
+    dbConfig.get().collection('abc').findOneAndUpdate({_id:objId},{$set:data},{returnOrginal:false},function (err,result){
         console.log(result)
         res.redirect('/admin/admin')
+    })
+})
+
+router.post('/singleupdate/:id', (req,res,callback)=>{
+    var abdId=req.params.id;
+    let idString=abdId
+    let objId = new ObjectID(idString);
+    var data= {
+        place: req.body.name,
+        price:req.body.price,
+        description1:req.body.description1,
+        description2:req.body.description2,
+        persons:req.body.persons
+    }
+    dbConfig.get().collection('single').findOneAndUpdate({_id:objId},{$set:data},{returnOrginal:false},function (err,result){
+        console.log(result)
+        res.redirect('/admin/single')
     })
 })
 

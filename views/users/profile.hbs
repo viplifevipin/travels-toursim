@@ -1,1 +1,25 @@
-<h3>user profile</h3>
+<div class="container row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <h2>My Bookings</h2>
+        {{#each orders}}
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                            <span class="badge"><strong>Total Amount: {{this.amount }}</strong>
+                            </span>
+                                {{this.place}}
+                            </li>
+
+                    </ul>
+                </div>
+
+        {{/each}}
+
+
+    </div>
+</div>
+</div>
