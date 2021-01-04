@@ -14,6 +14,7 @@ router.get('/',(req ,res)=>{
     let locals = {};
     let tasks = [
         function (callback) {
+//             geting the images for the slide show
             dbConfig.get().collection('hellosi').find({}).toArray(function (error, room) {
                 if (error) return callback(error);
                 console.log('room details on dashboard' + room);
@@ -40,15 +41,12 @@ router.get('/',(req ,res)=>{
     })
 
 
+// for the google authentication using passportjs
 router.get('/google', passport.authenticate('google',{
     scope:['profile']
 }))
 
-
-// router.get('/auth/facebook',
-//     passport.authenticate('facebook'));
-
-
+// redirecting to localhost
 router.get('/auth/google/redirect',
     passport.authenticate('google', { failureRedirect: '/google' }),
     function(req, res) {
@@ -56,14 +54,8 @@ router.get('/auth/google/redirect',
         res.redirect('/');
     });
 
-// router.get('/auth/facebook/callback',
-//     passport.authenticate('facebook', { failureRedirect: '/facebook' }),
-//     function(req, res) {
-//         // Successful authentication, redirect home.
-//         res.redirect('/');
-//     });
-
-router.get('/packages',(req,res)=>{
+// search option for packages searching using fuzzy search (honey moon package)
+ router.get('/packages',(req,res)=>{
     var successMsg=req.flash('success')[0];
     if(req.query.search){
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
@@ -90,6 +82,7 @@ router.get('/packages',(req,res)=>{
 
 })
 
+// search option for packages searching using fuzzy search (singles package)
 router.get('/single',(req,res)=>{
 
     if(req.query.search){
@@ -121,7 +114,7 @@ router.get('',isLoggedIn,(req,res)=>{
     dbConfig.get().collection('abc').findOne({})
 
 })
-
+// packages router for payment
 router.get('/payment/:id',isLoggedIn,async (req,res)=>{
     var abcId=req.params.id;
     let idString=abcId
@@ -135,6 +128,7 @@ router.get('/payment/:id',isLoggedIn,async (req,res)=>{
         res.render('payment/payment',{abc:doc})
     })
 })
+// packages router for payment
 
 router.get('/best/:id',isLoggedIn,async (req,res)=>{
     var abcId=req.params.id;
@@ -149,6 +143,7 @@ router.get('/best/:id',isLoggedIn,async (req,res)=>{
         res.render('payment/payment',{abc:doc})
     })
 })
+// packages router for payment
 
 router.get('/alone/:id',isLoggedIn,async (req,res)=>{
     var abcId=req.params.id;
@@ -166,7 +161,7 @@ router.get('/alone/:id',isLoggedIn,async (req,res)=>{
 
 
 
-
+// payment method with paytm
 
 router.post('/paynow', (req, res) => {
 
