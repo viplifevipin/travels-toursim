@@ -7,18 +7,10 @@ router.get('/',isLoggedIn,(req,res)=>{
     res.render('enquiry/enquiry')
 })
 
+// for posting enquiry 
 router.post('/mail',async (req,res,cb)=>{
-   //  console.log('done:',req.body)
-   //  const {subject,email,text}=req.body
-   // await sendMail(email,subject,text, (err,data)=>{
-   //      if (err)
-   //          throw err
-   //      else {
-   //          res.redirect('/')
-   //          console.log('done:',data)
-   //      }
-   //  })
 
+//     authentication key from mailgun
     const auth={
         auth:{
             api_key:'88834f906878d3a971eaee89c6433ef9-e5da0167-2d43050f',
