@@ -6,7 +6,7 @@ var passport=require('passport')
 var  {check,validationResult}=require('express-validator')
 
 
-
+// profile router
 router.get('/profile',isLoggedIn,function (req,res){
     dbConfig.get().collection('order').find({user:req.user}).toArray(function(err,orders){
         if (err){
@@ -19,7 +19,7 @@ router.get('/profile',isLoggedIn,function (req,res){
         console.log(orders)
     });
 })
-
+// for logout
 router.get('/logout',isLoggedIn,function (req,res,next) {
     req.logOut()
     res.redirect('/')
